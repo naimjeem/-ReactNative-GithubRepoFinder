@@ -15,7 +15,7 @@
             radio1 : true,
             check1: false,
             modalVisible: false,
-            search: 'nativebase',
+            search: 'react-native',
             selectedItem: undefined,
             results: {
                 items: []
@@ -81,7 +81,7 @@
                         <Icon name="ios-search" />
                         <Input placeholder="Search" value={this.state.search}  onChangeText={(text) => this.setState({search:text})} onSubmitEditing={()=>this.search()}/>
                     </InputGroup>
-                    <Button transparent onPress={()=>this.search()}>Go</Button>
+                    <Button transparent onPress={()=>this.search()}><Text>Go</Text></Button>
                 </Header>
                 <Content>
                     {this.state.loading? <Spinner /> : <List dataArray={this.state.results.items} renderRow={(item) =>
@@ -123,8 +123,7 @@
                                 <Button danger style={{alignSelf: 'flex-end'}} onPress={() => {
                                         this.setModalVisible(!this.state.modalVisible, this.state.selectedItem)
                                     }}>
-                                    Go Back
-                                </Button>
+                                </Button><Text>Go</Text><Text>Back</Text>
                             </CardItem>
                             }
                         </Card>
